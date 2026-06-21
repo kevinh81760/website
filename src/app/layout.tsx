@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { interTight, spaceGrotesk } from "@/fonts";
+import { siteConfig } from "@/lib/siteConfig";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BURGERBOTS",
-  description: "Industry robots. Simply deployed. Ready to work.",
+  title: siteConfig.name,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

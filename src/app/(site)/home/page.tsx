@@ -1,21 +1,26 @@
-import { Hero } from "@/components/landing/Hero";
-import { ContentSection } from "@/components/landing/ContentSection";
-import { FAQSection } from "@/components/landing/FAQSection";
-import { Footer } from "@/components/landing/Footer";
 import type { Metadata } from "next";
+import { BobFactCards } from "@/components/home/BobFactCards";
+import { MenuHighlights } from "@/components/home/MenuHighlights";
+import { PixelMosaicShowcase } from "@/components/home/PixelMosaicShowcase";
+import { VisitSection } from "@/components/home/VisitSection";
+import { Hero } from "@/components/home/Hero";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "BURGERBOTS",
-  description: "Industry robots. Simply deployed. Ready to work.",
+  description:
+    "Made by robots. Loved by humans. B.O.B. cooks every burger from scratch in Los Gatos, CA.",
 };
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col min-h-screen">
+    <main className="relative flex min-h-screen flex-col">
       <Hero />
-      <ContentSection />
-      <FAQSection />
-      <Footer />
+      <BobFactCards />
+      <PixelMosaicShowcase />
+      <MenuHighlights />
+      <VisitSection />
+      <Footer variant="minimal" />
     </main>
   );
 }

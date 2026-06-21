@@ -1,9 +1,10 @@
-import { NavBar } from "@/components/landing/NavBar";
+import type { ReactNode } from "react";
+import { NavBar } from "@/components/layout/NavBar";
 
 export default function SiteLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <>

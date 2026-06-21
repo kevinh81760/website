@@ -1,0 +1,424 @@
+/* BurgerBots design tokens
+   Source of truth for colors, typography, spacing, layout, and motion.
+*/
+
+:root {
+    /* =========================================================
+       FONT FAMILIES
+       next/font should define these variables in layout.tsx
+       ========================================================= */
+  
+    --bb-font-body: var(--font-inter-tight), Arial, sans-serif;
+    --bb-font-display: var(--font-space-grotesk), Arial, sans-serif;
+  
+    /* =========================================================
+       BRAND COLORS
+       ========================================================= */
+  
+    --bb-color-brand: #f2b632;
+    --bb-color-brand-hover: #d99a18;
+    --bb-color-brand-active: #bd8210;
+    --bb-color-brand-soft: #fff3d6;
+    --bb-color-brand-contrast: #171717;
+  
+    /* =========================================================
+       NEUTRAL COLORS
+       ========================================================= */
+  
+    --bb-color-white: #ffffff;
+    --bb-color-black: #000000;
+  
+    --bb-color-cream-50: #faf7f5;
+    --bb-color-cream-100: #f5f0ed;
+    --bb-color-cream-200: #f0ebe8;
+    --bb-color-cream-300: #e8e3e0;
+  
+    --bb-color-gray-50: #f9fafb;
+    --bb-color-gray-100: #f2f4f7;
+    --bb-color-gray-200: #eaecf0;
+    --bb-color-gray-300: #d0d5dd;
+    --bb-color-gray-400: #98a2b3;
+    --bb-color-gray-500: #667085;
+    --bb-color-gray-600: #475467;
+    --bb-color-gray-700: #344054;
+    --bb-color-gray-800: #1d2939;
+    --bb-color-gray-900: #101828;
+  
+    --bb-color-charcoal-800: #1b1b1b;
+    --bb-color-charcoal-900: #111111;
+    --bb-color-charcoal-950: #090909;
+  
+    /* =========================================================
+       SEMANTIC COLORS
+       Use these inside components instead of raw palette values.
+       ========================================================= */
+  
+    --bb-color-background: var(--bb-color-cream-50);
+    --bb-color-background-alt: var(--bb-color-cream-100);
+  
+    --bb-color-surface: var(--bb-color-white);
+    --bb-color-surface-muted: var(--bb-color-cream-200);
+    --bb-color-surface-raised: var(--bb-color-white);
+  
+    --bb-color-surface-dark: var(--bb-color-charcoal-900);
+    --bb-color-surface-dark-raised: var(--bb-color-charcoal-800);
+  
+    --bb-color-text-primary: #1a1a2e;
+    --bb-color-text-secondary: var(--bb-color-gray-500);
+    --bb-color-text-muted: var(--bb-color-gray-400);
+    --bb-color-text-disabled: var(--bb-color-gray-300);
+  
+    --bb-color-text-on-dark: var(--bb-color-white);
+    --bb-color-text-on-dark-muted: rgb(255 255 255 / 0.72);
+    --bb-color-text-on-dark-subtle: rgb(255 255 255 / 0.56);
+  
+    --bb-color-border-default: #d8d2ce;
+    --bb-color-border-subtle: #e8e3e0;
+    --bb-color-border-strong: #b8b0ab;
+    --bb-color-border-dark: #333333;
+  
+    --bb-color-focus-ring: rgb(242 182 50 / 0.4);
+  
+    /* =========================================================
+       STATUS COLORS
+       ========================================================= */
+  
+    --bb-color-success: #22c55e;
+    --bb-color-success-soft: #dcfce7;
+    --bb-color-success-strong: #15803d;
+  
+    --bb-color-warning: #f59e0b;
+    --bb-color-warning-soft: #fef3c7;
+    --bb-color-warning-strong: #b45309;
+  
+    --bb-color-error: #ef4444;
+    --bb-color-error-soft: #fee2e2;
+    --bb-color-error-strong: #b91c1c;
+  
+    --bb-color-info: #3b82f6;
+    --bb-color-info-soft: #dbeafe;
+    --bb-color-info-strong: #1d4ed8;
+  
+    /* =========================================================
+       OVERLAYS
+       ========================================================= */
+  
+    --bb-color-overlay-light: rgb(0 0 0 / 0.16);
+    --bb-color-overlay-medium: rgb(0 0 0 / 0.32);
+    --bb-color-overlay-heavy: rgb(0 0 0 / 0.56);
+  
+    --bb-color-overlay-gradient-start: rgb(0 0 0 / 0.78);
+    --bb-color-overlay-gradient-middle: rgb(0 0 0 / 0.36);
+    --bb-color-overlay-gradient-end: rgb(0 0 0 / 0);
+  
+    /* =========================================================
+       FONT WEIGHTS
+       ========================================================= */
+  
+    --bb-font-weight-light: 300;
+    --bb-font-weight-regular: 400;
+    --bb-font-weight-medium: 500;
+    --bb-font-weight-semibold: 600;
+    --bb-font-weight-bold: 700;
+  
+    /* =========================================================
+       FONT SIZES
+       ========================================================= */
+  
+    --bb-text-xs: 0.75rem; /* 12px */
+    --bb-text-sm: 0.875rem; /* 14px */
+    --bb-text-base: 1rem; /* 16px */
+    --bb-text-lg: 1.125rem; /* 18px */
+    --bb-text-xl: 1.25rem; /* 20px */
+    --bb-text-2xl: 1.5rem; /* 24px */
+    --bb-text-3xl: 1.875rem; /* 30px */
+    --bb-text-4xl: 2.25rem; /* 36px */
+    --bb-text-5xl: 3rem; /* 48px */
+    --bb-text-6xl: 3.75rem; /* 60px */
+  
+    --bb-text-label-sm: 0.6875rem; /* 11px */
+    --bb-text-label: 0.75rem; /* 12px */
+    --bb-text-label-lg: 0.8125rem; /* 13px */
+  
+    /* =========================================================
+       FLUID TYPOGRAPHY
+       ========================================================= */
+  
+    --bb-text-display-xl: clamp(3rem, 6vw, 5.5rem);
+    --bb-text-display-lg: clamp(2.5rem, 5vw, 4.5rem);
+    --bb-text-display-md: clamp(2.25rem, 4vw, 3.75rem);
+    --bb-text-display-sm: clamp(2rem, 3.5vw, 3rem);
+  
+    --bb-text-heading-xl: clamp(2rem, 3vw, 2.75rem);
+    --bb-text-heading-lg: clamp(1.75rem, 2.5vw, 2.25rem);
+    --bb-text-heading-md: clamp(1.5rem, 2vw, 1.875rem);
+    --bb-text-heading-sm: clamp(1.25rem, 1.5vw, 1.5rem);
+  
+    --bb-text-metric: clamp(2rem, 4vw, 3rem);
+    --bb-text-cta: clamp(1.75rem, 3vw, 2.75rem);
+  
+    /* =========================================================
+       LINE HEIGHTS
+       ========================================================= */
+  
+    --bb-leading-none: 1;
+    --bb-leading-display: 0.92;
+    --bb-leading-tight: 1.15;
+    --bb-leading-snug: 1.3;
+    --bb-leading-normal: 1.5;
+    --bb-leading-relaxed: 1.65;
+    --bb-leading-loose: 1.8;
+  
+    /* =========================================================
+       LETTER SPACING
+       ========================================================= */
+  
+    --bb-tracking-tighter: -0.04em;
+    --bb-tracking-tight: -0.025em;
+    --bb-tracking-normal: 0;
+    --bb-tracking-wide: 0.025em;
+    --bb-tracking-wider: 0.08em;
+    --bb-tracking-label: 0.12em;
+    --bb-tracking-eyebrow: 0.18em;
+  
+    /* =========================================================
+       SPACING SCALE
+       ========================================================= */
+  
+    --bb-space-0: 0;
+    --bb-space-1: 0.25rem; /* 4px */
+    --bb-space-2: 0.5rem; /* 8px */
+    --bb-space-3: 0.75rem; /* 12px */
+    --bb-space-4: 1rem; /* 16px */
+    --bb-space-5: 1.25rem; /* 20px */
+    --bb-space-6: 1.5rem; /* 24px */
+    --bb-space-8: 2rem; /* 32px */
+    --bb-space-10: 2.5rem; /* 40px */
+    --bb-space-12: 3rem; /* 48px */
+    --bb-space-16: 4rem; /* 64px */
+    --bb-space-20: 5rem; /* 80px */
+    --bb-space-24: 6rem; /* 96px */
+    --bb-space-32: 8rem; /* 128px */
+  
+    /* =========================================================
+       SEMANTIC SPACING
+       ========================================================= */
+  
+    --bb-page-padding-inline: 1.25in;
+  
+    --bb-section-padding-sm: clamp(3rem, 6vw, 4rem);
+    --bb-section-padding-md: clamp(4rem, 8vw, 6rem);
+    --bb-section-padding-lg: clamp(5rem, 10vw, 8rem);
+  
+    --bb-content-gap-sm: var(--bb-space-4);
+    --bb-content-gap-md: var(--bb-space-6);
+    --bb-content-gap-lg: var(--bb-space-10);
+  
+    --bb-button-padding-x: 2rem;
+    --bb-button-padding-y: 1rem;
+  
+    --bb-button-sm-padding-x: 1.5rem;
+    --bb-button-sm-padding-y: 0.75rem;
+  
+    --bb-input-padding-x: 1rem;
+    --bb-input-padding-y: 0.875rem;
+  
+    /* =========================================================
+       LAYOUT
+       ========================================================= */
+  
+    --bb-container-sm: 40rem;
+    --bb-container-md: 56rem;
+    --bb-container-lg: 72rem;
+    --bb-container-xl: 80rem;
+    --bb-container-2xl: 90rem;
+  
+    --bb-content-width-reading: 42rem;
+    --bb-content-width-copy: 56rem;
+  
+    --bb-header-height: 5rem;
+  
+    /* =========================================================
+       BORDER WIDTHS
+       ========================================================= */
+  
+    --bb-border-width-thin: 1px;
+    --bb-border-width-medium: 2px;
+    --bb-border-width-thick: 4px;
+  
+    /* =========================================================
+       BORDER RADII
+       ========================================================= */
+  
+    --bb-radius-none: 0;
+    --bb-radius-sm: 0.375rem;
+    --bb-radius-md: 0.5rem;
+    --bb-radius-lg: 0.75rem;
+    --bb-radius-xl: 1rem;
+    --bb-radius-2xl: 1.5rem;
+    --bb-radius-3xl: 2rem;
+    --bb-radius-pill: 9999px;
+  
+    --bb-radius-button: var(--bb-radius-pill);
+    --bb-radius-input: var(--bb-radius-lg);
+    --bb-radius-card: var(--bb-radius-xl);
+  
+    /* =========================================================
+       SHADOWS
+       ========================================================= */
+  
+    --bb-shadow-xs: 0 1px 2px rgb(16 24 40 / 0.05);
+  
+    --bb-shadow-sm:
+      0 1px 3px rgb(16 24 40 / 0.1),
+      0 1px 2px rgb(16 24 40 / 0.06);
+  
+    --bb-shadow-md:
+      0 4px 8px -2px rgb(16 24 40 / 0.1),
+      0 2px 4px -2px rgb(16 24 40 / 0.06);
+  
+    --bb-shadow-lg:
+      0 12px 24px -4px rgb(16 24 40 / 0.14),
+      0 4px 8px -4px rgb(16 24 40 / 0.08);
+  
+    --bb-shadow-xl:
+      0 24px 48px -12px rgb(16 24 40 / 0.2);
+  
+    --bb-shadow-brand:
+      0 10px 24px rgb(242 182 50 / 0.28);
+  
+    /* =========================================================
+       Z-INDEX
+       ========================================================= */
+  
+    --bb-z-base: 0;
+    --bb-z-raised: 10;
+    --bb-z-dropdown: 100;
+    --bb-z-sticky: 200;
+    --bb-z-overlay: 300;
+    --bb-z-modal: 400;
+    --bb-z-toast: 500;
+  
+    /* =========================================================
+       MOTION
+       ========================================================= */
+  
+    --bb-duration-instant: 100ms;
+    --bb-duration-fast: 180ms;
+    --bb-duration-normal: 280ms;
+    --bb-duration-slow: 450ms;
+  
+    --bb-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --bb-ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --bb-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --bb-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  
+    --bb-transition-fast:
+      color var(--bb-duration-fast) var(--bb-ease-standard),
+      background-color var(--bb-duration-fast) var(--bb-ease-standard),
+      border-color var(--bb-duration-fast) var(--bb-ease-standard),
+      opacity var(--bb-duration-fast) var(--bb-ease-standard),
+      transform var(--bb-duration-fast) var(--bb-ease-standard);
+  
+    --bb-transition-normal:
+      color var(--bb-duration-normal) var(--bb-ease-standard),
+      background-color var(--bb-duration-normal) var(--bb-ease-standard),
+      border-color var(--bb-duration-normal) var(--bb-ease-standard),
+      opacity var(--bb-duration-normal) var(--bb-ease-standard),
+      transform var(--bb-duration-normal) var(--bb-ease-standard);
+  
+    /* =========================================================
+       PIXEL UI
+       ========================================================= */
+  
+    --bb-pixel-grid: 4px;
+    --bb-pixel-corner: 8px;
+  }
+  
+  /* =========================================================
+     TAILWIND CSS V4 THEME MAPPINGS
+     These expose selected tokens as Tailwind utilities.
+     ========================================================= */
+  
+  @theme inline {
+    /* Fonts */
+    --font-sans: var(--bb-font-body);
+    --font-display: var(--bb-font-display);
+  
+    /* Core colors */
+    --color-background: var(--bb-color-background);
+    --color-background-alt: var(--bb-color-background-alt);
+  
+    --color-surface: var(--bb-color-surface);
+    --color-surface-muted: var(--bb-color-surface-muted);
+    --color-surface-dark: var(--bb-color-surface-dark);
+  
+    --color-text-primary: var(--bb-color-text-primary);
+    --color-text-secondary: var(--bb-color-text-secondary);
+    --color-text-muted: var(--bb-color-text-muted);
+    --color-text-disabled: var(--bb-color-text-disabled);
+  
+    --color-brand: var(--bb-color-brand);
+    --color-brand-hover: var(--bb-color-brand-hover);
+    --color-brand-active: var(--bb-color-brand-active);
+    --color-brand-soft: var(--bb-color-brand-soft);
+    --color-brand-contrast: var(--bb-color-brand-contrast);
+
+    --color-text-on-dark: var(--bb-color-text-on-dark);
+    --color-text-on-dark-muted: var(--bb-color-text-on-dark-muted);
+    --color-text-on-dark-subtle: var(--bb-color-text-on-dark-subtle);
+
+    --color-border-default: var(--bb-color-border-default);
+    --color-border-subtle: var(--bb-color-border-subtle);
+    --color-border-strong: var(--bb-color-border-strong);
+    --color-border-dark: var(--bb-color-border-dark);
+  
+    --color-success: var(--bb-color-success);
+    --color-warning: var(--bb-color-warning);
+    --color-error: var(--bb-color-error);
+    --color-info: var(--bb-color-info);
+  
+    /* Typography */
+    --text-display-xl: var(--bb-text-display-xl);
+    --text-display-lg: var(--bb-text-display-lg);
+    --text-display-md: var(--bb-text-display-md);
+    --text-display-sm: var(--bb-text-display-sm);
+  
+    --text-heading-xl: var(--bb-text-heading-xl);
+    --text-heading-lg: var(--bb-text-heading-lg);
+    --text-heading-md: var(--bb-text-heading-md);
+    --text-heading-sm: var(--bb-text-heading-sm);
+  
+    --text-metric: var(--bb-text-metric);
+    --text-cta: var(--bb-text-cta);
+
+    --text-label-sm: var(--bb-text-label-sm);
+    --text-label-lg: var(--bb-text-label-lg);
+
+    --leading-display: var(--bb-leading-display);
+    --leading-tight: var(--bb-leading-tight);
+    --leading-snug: var(--bb-leading-snug);
+    --leading-relaxed: var(--bb-leading-relaxed);
+
+    --tracking-tight: var(--bb-tracking-tight);
+    --tracking-eyebrow: var(--bb-tracking-eyebrow);
+    --tracking-label: var(--bb-tracking-label);
+    --tracking-wider: var(--bb-tracking-wider);
+  
+    /* Layout */
+    --spacing-page-x: var(--bb-page-padding-inline);
+  
+    --spacing-section-sm: var(--bb-section-padding-sm);
+    --spacing-section-md: var(--bb-section-padding-md);
+    --spacing-section-lg: var(--bb-section-padding-lg);
+  
+    /* Radius */
+    --radius-card: var(--bb-radius-card);
+    --radius-input: var(--bb-radius-input);
+    --radius-button: var(--bb-radius-button);
+  
+    /* Shadows */
+    --shadow-card: var(--bb-shadow-md);
+    --shadow-card-hover: var(--bb-shadow-lg);
+    --shadow-brand: var(--bb-shadow-brand);
+  }

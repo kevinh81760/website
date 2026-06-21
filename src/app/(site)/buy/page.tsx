@@ -1,30 +1,30 @@
-import { ContactForm } from "@/components/contact/ContactForm";
-import { Footer } from "@/components/landing/Footer";
+import { BookDemoCTA } from "@/components/buy/BookDemoCTA";
+import { FAQSection } from "@/components/buy/FAQSection";
+import { HowItWorksSection } from "@/components/buy/HowItWorksSection";
+import { ProductHero } from "@/components/buy/ProductHero";
+import { ProductStats } from "@/components/buy/ProductStats";
+import { ProductVideo } from "@/components/buy/ProductVideo";
+import { SystemModulesSection } from "@/components/buy/SystemModulesSection";
+import { Footer } from "@/components/layout/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Buy a BurgerBot | BURGERBOTS",
-  description: "Bring B.O.B. to your kitchen. Get in touch to own a BurgerBot.",
+  description:
+    "Meet B.O.B. — the BurgerBot system that fits your kitchen. Same-day install, 300 covers per hour, learns from live demonstrations.",
 };
 
 export default function BuyPage() {
   return (
-    <main className="relative flex min-h-screen flex-col bg-bg-hero text-foreground">
-      <section className="flex flex-1 flex-col justify-center px-6 py-32 md:px-10 lg:px-16 xl:px-[80px]">
-        <p className="mb-8 text-[11px] font-medium uppercase tracking-[0.25em] text-text-secondary">
-          Own a BurgerBot
-        </p>
-        <h1 className="mb-6 max-w-3xl font-(family-name:--font-space-grotesk) text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[0.92] tracking-tight text-black">
-          Put B.O.B. in your kitchen.
-        </h1>
-        <p className="mb-16 max-w-xl text-lg leading-relaxed text-text-secondary">
-          BurgerBots slots into the kitchen you already have. Tell us about your
-          operations and we&apos;ll walk you through ownership, setup, and menu
-          training.
-        </p>
-        <ContactForm />
-      </section>
-      <Footer />
+    <main className="relative flex min-h-screen flex-col bg-background text-text-primary">
+      <ProductHero />
+      <ProductStats />
+      <ProductVideo />
+      <SystemModulesSection />
+      <HowItWorksSection />
+      <FAQSection />
+      <BookDemoCTA />
+      <Footer variant="minimal" />
     </main>
   );
 }
