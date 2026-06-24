@@ -44,7 +44,6 @@ export function MenuHighlights() {
             </p>
 
             <div className="flex flex-col gap-3 px-0.5">
-              <p className="type-eyebrow">{item.kicker}</p>
               <p className="type-body leading-snug text-text-primary">
                 {item.description}
               </p>
