@@ -98,7 +98,7 @@ function FAQItem({ question, answer }: FAQ) {
 
 export function VisitFAQ() {
   return (
-    <div className="mt-10 border-t border-dashed border-text-primary/10 pt-10">
+    <div className="mt-8 border-t border-dashed border-text-primary/10 pt-6">
       <FadeIn>
         <h3 className="type-heading-md text-text-primary">Try a Burger FAQ</h3>
       </FadeIn>

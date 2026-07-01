@@ -12,17 +12,17 @@ export function VisitSection() {
   return (
     <section
       id="visit"
-      className="page-x border-t border-dashed border-text-primary/10 bg-surface-muted py-[calc(var(--spacing-section-md)+0.45in)]"
+      className="page-x border-t border-dashed border-text-primary/10 bg-surface-muted py-[calc(var(--spacing-section-sm)+0.25in)]"
       style={{ scrollMarginTop: NAV_BAR_HEIGHT_PX }}
     >
-      <div className="mx-auto flex max-w-5xl items-stretch gap-5 md:gap-16">
-        <FadeIn className="flex w-44 shrink-0 md:w-[26rem]">
+      <div className="mx-auto grid max-w-5xl grid-cols-[11rem_minmax(0,1fr)] items-stretch gap-5 md:grid-cols-[26rem_minmax(0,1fr)] md:gap-10">
+        <FadeIn className="h-full min-h-0">
           <PixelFrame
             label="Breaking Dawn · Los Gatos"
             labelPosition="overlay"
-            className="h-full flex-1"
+            className="h-full w-full"
           >
-            <div className="relative h-full min-h-0 w-full">
+            <div className="relative h-full min-h-48 w-full md:min-h-0">
               <Image
                 src={restaurant.visitImage}
                 alt="Fried chicken sandwich and fries at Breaking Dawn in Los Gatos"
@@ -34,13 +34,13 @@ export function VisitSection() {
           </PixelFrame>
         </FadeIn>
 
-        <FadeIn delay={0.1} className="flex min-w-0 flex-1 flex-col gap-7 md:gap-8">
+        <FadeIn delay={0.1} className="flex min-w-0 flex-1 flex-col justify-between gap-5 md:gap-6">
           <div>
             <p className="type-eyebrow">Swing By</p>
-            <h2 className="type-heading-xl mt-3 text-text-primary">
+            <h2 className="type-heading-xl mt-2 text-text-primary">
               Servin&apos; Burgs
             </h2>
-            <div className="mt-5 flex flex-col gap-1 text-text-primary">
+            <div className="mt-4 flex flex-col gap-1 text-text-primary">
               {restaurant.hours.map((block) => (
                 <div key={block.days}>
                   <p className="font-semibold">{block.days}</p>
@@ -48,27 +48,27 @@ export function VisitSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-text-secondary">
+            <p className="mt-3 text-text-secondary">
               {restaurant.address}, {restaurant.city}
             </p>
-            <p className="type-body-lg mt-5">
+            <p className="type-body-lg mt-4">
               One kitchen, two concepts. B.O.B. runs the line for both: Breaking
               Dawn Brunch in the morning and First Born Los Gatos for happy hour
               and dinner.
             </p>
-            <p className="type-body-lg mt-4">
+            <p className="type-body-lg mt-3">
               Walk in, grab a seat, and watch the line. Our chefs cook every
               patty. B.O.B. handles the garnish. Our servers bring it to your
               table.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="grid shrink-0 grid-cols-2 gap-3">
             <a
               href={restaurant.yelpUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary min-h-14 items-center justify-center px-3 text-center text-xs leading-snug md:min-h-[3.75rem] md:px-4 md:text-sm"
             >
               Reserve at Breaking Dawn Brunch on Yelp →
             </a>
@@ -76,7 +76,7 @@ export function VisitSection() {
               href={restaurant.openTableUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
+              className="btn-outline min-h-14 items-center justify-center px-3 text-center text-xs leading-snug md:min-h-[3.75rem] md:px-4 md:text-sm"
             >
               Reserve at First Born Los Gatos on OpenTable →
             </a>
