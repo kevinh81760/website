@@ -32,7 +32,7 @@ export function MetricsGrid(props: MetricsGridProps) {
       (compact
         ? "border-y border-text-primary/10 py-8 md:py-10"
         : "border-y border-text-primary/10 py-14 md:py-16"),
-    embedded && (compact ? "py-4 md:py-8" : "py-10 md:py-12"),
+    embedded && (compact ? "pt-8 pb-4 md:pt-12 md:pb-8" : "py-10 md:py-12"),
     background && "bg-surface-muted",
   ]
     .filter(Boolean)
@@ -70,7 +70,7 @@ export function MetricsGrid(props: MetricsGridProps) {
           <p
             className={
               compact
-                ? "type-eyebrow mb-3 hidden sm:block"
+                ? "type-eyebrow mb-4 hidden sm:block md:mb-5"
                 : "type-eyebrow mb-10"
             }
           >

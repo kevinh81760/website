@@ -60,7 +60,7 @@ export function InvestorTechnology() {
                   alt={image.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-cover object-[center_calc(50%+1in)]"
+                  className="object-cover object-[center_calc(50%+)]"
                 />
               </div>
             </PixelFrame>
