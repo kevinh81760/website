@@ -31,9 +31,9 @@ export function ProductHero() {
             Put B.O.B. in your kitchen.
           </h1>
           <p className="type-body max-w-md">
-            BurgerBots slots into the kitchen you already have. Same-day setup,
-            menu training from live demonstrations, and consistent assembly
-            from the first order.
+            BurgerBots works in the kitchen you already run. Setup in about a
+            week, menu training from live demonstrations, and consistent
+            assembly from the first order.
           </p>
           <Link
             href={siteConfig.calendlyUrl}

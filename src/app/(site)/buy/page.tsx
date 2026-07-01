@@ -4,13 +4,15 @@ import { ProductHero } from "@/components/buy/ProductHero";
 import { ProductStats } from "@/components/buy/ProductStats";
 import { ProductVideo } from "@/components/buy/ProductVideo";
 import { SystemModulesSection } from "@/components/buy/SystemModulesSection";
+import { SpecTable } from "@/components/shared/SpecTable";
 import { Footer } from "@/components/layout/Footer";
+import { buyHardwareSection } from "@/lib/hardwareSpecs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Own a BurgerBot | BURGERBOTS",
   description:
-    "Meet B.O.B. — the BurgerBot system that fits your kitchen. Same-day install, 300 covers per hour, learns from live demonstrations.",
+    "Meet B.O.B. — the BurgerBot system that fits your kitchen. Setup in about a week, 27 seconds a burger, learns from live demonstrations.",
 };
 
 export default function BuyPage() {
@@ -20,6 +22,7 @@ export default function BuyPage() {
       <ProductStats />
       <ProductVideo />
       <SystemModulesSection />
+      <SpecTable {...buyHardwareSection} />
       <FAQSection />
       <BookDemoCTA />
       <Footer variant="minimal" />

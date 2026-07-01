@@ -12,14 +12,14 @@ export type InvestorMetric = {
 
 export const productMetrics: ProductMetric[] = [
   {
-    value: "300",
-    unit: "covers/hour",
-    label: "Per unit, without breaking pace during peak service.",
+    value: "27",
+    unit: "seconds a burger",
+    label: "",
   },
   {
-    value: "Same day",
+    value: "7 days",
     unit: "install",
-    label: "Hours, not weeks. No structural changes to your kitchen.",
+    label: "",
   },
   {
     value: "90 sec",
@@ -35,9 +35,9 @@ export const productMetrics: ProductMetric[] = [
 
 export const investorMetrics: InvestorMetric[] = [
   {
-    label: "Throughput",
-    value: "300 covers/hr",
-    detail: "Per unit at sustained peak volume",
+    label: "Speed",
+    value: "27 sec/burger",
+    detail: "Garnish to assembled burger",
   },
   {
     label: "Deployment",
@@ -53,11 +53,6 @@ export const investorMetrics: InvestorMetric[] = [
     label: "Precision",
     value: "Sub-mm",
     detail: "Assembly repeatability across thousands of orders",
-  },
-  {
-    label: "Compute",
-    value: "On-device",
-    detail: "Local inference — no cloud dependency for production",
   },
   {
     label: "Training",

@@ -1,39 +1,55 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { ModuleFlowDiagram } from "@/components/buy/ModuleFlowDiagram";
 import { showcaseModules } from "@/lib/systemModules";
 
 export function SystemShowcase() {
-  const showcaseImage = showcaseModules[0]?.image;
+  const [activeId, setActiveId] = useState(showcaseModules[0]?.id ?? "");
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-[1200px] mt-8 mb-8">
-      <div className="flex flex-col gap-2 md:aspect-square md:min-h-0">
-        {showcaseModules.map((item, i) => (
-          <div
-            key={item.id}
-            className="flex flex-1 flex-col justify-center border border-border-default px-4 py-3 min-h-0"
-          >
-            <div className="flex items-start gap-4">
-              <span className="text-xs font-medium mt-1 text-text-primary">
-                {String(i + 1).padStart(2, "0")}.
-              </span>
-              <span className="text-lg font-semibold text-text-primary">
-                {item.name}
-              </span>
-            </div>
-            <p className="type-body-sm pl-8 mt-2 line-clamp-2">{item.description}</p>
-          </div>
-        ))}
+    <div className="flex w-full max-w-[1200px] flex-col gap-8">
+      <div className="pixel-frame-border bg-text-primary p-1">
+        <div className="bg-surface-muted px-4 py-6 md:px-8 md:py-8">
+          <p className="type-eyebrow mb-5 text-center md:mb-6">
+            Production line schematic
+          </p>
+          <ModuleFlowDiagram
+            modules={showcaseModules}
+            activeId={activeId}
+            onSelect={setActiveId}
+          />
+        </div>
       </div>
 
-      <div className="relative aspect-square overflow-hidden shadow-lg">
-        {showcaseImage && (
-          <Image
-            src={showcaseImage}
-            alt="B.O.B. system"
-            fill
-            className="object-cover"
-          />
-        )}
+      <div className="grid grid-cols-1 gap-px border border-text-primary/10 bg-text-primary/10 md:grid-cols-3">
+        {showcaseModules.map((module, index) => {
+          const isActive = module.id === activeId;
+
+          return (
+            <button
+              key={module.id}
+              type="button"
+              onClick={() => setActiveId(module.id)}
+              aria-pressed={isActive}
+              className={`flex flex-col gap-3 px-5 py-6 text-left transition-colors md:px-6 md:py-7 ${
+                isActive
+                  ? "bg-brand-soft"
+                  : "bg-background hover:bg-surface-muted"
+              }`}
+            >
+              <div className="flex items-baseline gap-3">
+                <span className="type-eyebrow text-[0.625rem]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-lg font-semibold tracking-tight text-text-primary">
+                  {module.name}
+                </h3>
+              </div>
+              <p className="type-body-sm leading-relaxed">{module.description}</p>
+            </button>
+          );
+        })}
       </div>
     </div>
   );

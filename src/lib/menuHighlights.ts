@@ -12,7 +12,7 @@ export const menuHighlights: MenuItem[] = [
     id: "burger-and-fries",
     name: "Burger & Fries",
     description:
-      "Ground fresh, grilled to order, dressed by Bob. The combo that started it all.",
+      "Quality beef grilled by our chefs, finished by B.O.B. The combo that started it all.",
     note: "Fresh-ground beef, melted cheese, and a side of thick-cut fries.",
     ctaLabel: "Try Burger & Fries →",
     image: "/assets/menu/burger-and-fries.png",

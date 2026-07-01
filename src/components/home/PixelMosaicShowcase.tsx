@@ -48,7 +48,7 @@ function ShowcaseTileContent({ tile }: { tile: ShowcaseTile }) {
       alt={tile.alt}
       fill
       sizes="(max-width: 768px) 50vw, 25vw"
-      className="object-cover"
+      className={`object-cover ${tile.imageClassName ?? ""}`}
     />
   );
 }

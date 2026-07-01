@@ -2,6 +2,7 @@ export type SystemModule = {
   id: string;
   name: string;
   description: string;
+  tagline?: string;
   image?: string;
   specs?: string[];
 };
@@ -85,8 +86,30 @@ export const systemModules: SystemModule[] = [
   },
 ];
 
-/** First four modules for the interactive buy-page showcase. */
-export const showcaseModules = systemModules.slice(0, 4);
+/** Three modules for the interactive buy-page showcase. */
+export const showcaseModules: SystemModule[] = [
+  {
+    id: "fresh-cut",
+    name: "Fresh Cut",
+    tagline: "On-demand veggie prep",
+    description:
+      "Lettuce, tomato, onion, and pickle, sliced and portioned the moment an order comes in. Four dedicated cutting stations mean nothing sits prepped and waiting, every veggie hits the burger minutes after it's cut, not hours.",
+  },
+  {
+    id: "sauced-up",
+    name: "Sauced Up",
+    tagline: "Portion-controlled sauces",
+    description:
+      "Every sauce and condiment dispensed in consistent, repeatable portions, order after order. No heavy hand on the mayo one time and a dry burger the next, B.O.B. aims for the same amount every time, across all four sauce lanes.",
+  },
+  {
+    id: "fries-served",
+    name: "Fries, Served",
+    tagline: "Fryer lane to tray",
+    description:
+      "B.O.B.'s clamshell arm lifts a fresh batch from the fryer lane and plates it alongside your burger, moving fries from fryer to tray without manual handling in normal operation. Same portion, same timing, every order.",
+  },
+];
 
 /** All modules with specs for the investor architecture grid. */
 export const investorModules = systemModules.filter((m) => m.specs);

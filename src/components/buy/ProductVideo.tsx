@@ -6,20 +6,25 @@ import { siteConfig } from "@/lib/siteConfig";
 export function ProductVideo() {
   return (
     <section className="section-shell">
-      <div className="mx-auto flex max-w-[770px] flex-col gap-8">
-        <FadeIn>
-          <h2 className="type-heading-xl text-center text-text-primary">
-            See B.O.B. on the line
-          </h2>
+      <div className="mx-auto flex w-full max-w-[770px] flex-col gap-8">
+        <FadeIn className="w-full">
+          <div className="flex w-full flex-col gap-4">
+            <h2 className="type-heading-xl text-text-primary">
+              See BurgerBots in action.
+            </h2>
+            <div className="type-body-lg flex w-full flex-col gap-4">
+              <p>
+                Consistent portions, consistent speed, consistent quality on every
+                order. The chef cooks. The robot assembles. You eat.
+              </p>
+              <p>
+                Come see it for yourself at our flagship, 160 W Main Street in Los
+                Gatos, home to Breaking Dawn Brunch and First Born Los Gatos.
+              </p>
+            </div>
+          </div>
         </FadeIn>
-        <FadeIn delay={0.1}>
-          <p className="type-body-lg text-center">
-            Consistent portions, consistent speed, consistent quality on every
-            order. The repetitive work gets handled so your team can focus on
-            guests.
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.15}>
+        <FadeIn delay={0.15} className="w-full">
           <PixelFrame className="w-full">
             <div className="relative aspect-video w-full">
               <VideoEmbed

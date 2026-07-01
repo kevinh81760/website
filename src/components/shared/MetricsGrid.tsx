@@ -7,20 +7,32 @@ type MetricsGridProps =
       metrics: ProductMetric[];
       background?: boolean;
       eyebrow?: string;
+      compact?: never;
+      embedded?: never;
     }
   | {
       variant: "investor";
       metrics: InvestorMetric[];
       background?: boolean;
       eyebrow?: string;
+      compact?: boolean;
+      embedded?: boolean;
     };
 
 export function MetricsGrid(props: MetricsGridProps) {
   const { variant, metrics, background = true, eyebrow } = props;
+  const compact = variant === "investor" ? (props.compact ?? false) : false;
+  const embedded = variant === "investor" ? (props.embedded ?? false) : false;
 
   const sectionClass = [
-    "section-shell",
-    variant === "investor" && "border-y border-text-primary/10 py-14 md:py-16",
+    !embedded && "section-shell",
+    embedded && "page-x",
+    variant === "investor" &&
+      !embedded &&
+      (compact
+        ? "border-y border-text-primary/10 py-8 md:py-10"
+        : "border-y border-text-primary/10 py-14 md:py-16"),
+    embedded && (compact ? "py-4 md:py-8" : "py-10 md:py-12"),
     background && "bg-surface-muted",
   ]
     .filter(Boolean)
@@ -38,7 +50,9 @@ export function MetricsGrid(props: MetricsGridProps) {
                 <p className="text-sm font-semibold uppercase tracking-wider text-text-primary">
                   {stat.unit}
                 </p>
-                <p className="type-body-sm">{stat.label}</p>
+                {stat.label ? (
+                  <p className="type-body-sm">{stat.label}</p>
+                ) : null}
               </div>
             </FadeIn>
           ))}
@@ -48,26 +62,61 @@ export function MetricsGrid(props: MetricsGridProps) {
   }
 
   const investorMetrics = metrics as InvestorMetric[];
+  const Wrapper = embedded ? "div" : "section";
   return (
-    <section className={sectionClass}>
+    <Wrapper className={sectionClass}>
       {eyebrow && (
         <FadeIn>
-          <p className="type-eyebrow mb-10">{eyebrow}</p>
+          <p
+            className={
+              compact
+                ? "type-eyebrow mb-3 hidden sm:block"
+                : "type-eyebrow mb-10"
+            }
+          >
+            {eyebrow}
+          </p>
         </FadeIn>
       )}
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={
+          compact
+            ? "grid grid-cols-3 gap-x-2 gap-y-3 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-5 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-6"
+            : "grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        }
+      >
         {investorMetrics.map((metric, i) => (
           <FadeIn key={metric.label} delay={i * 0.06}>
-            <div className="flex flex-col gap-1 border-t border-dashed border-text-primary/10 pt-4">
+            <div
+              className={
+                compact
+                  ? "flex flex-col gap-0.5 border-t border-dashed border-text-primary/10 pt-2.5"
+                  : "flex flex-col gap-1 border-t border-dashed border-text-primary/10 pt-4"
+              }
+            >
               <p className="type-eyebrow">{metric.label}</p>
-              <p className="font-display text-2xl font-bold tracking-tight text-text-primary">
+              <p
+                className={
+                  compact
+                    ? "font-display text-base font-bold tracking-tight text-text-primary sm:text-lg md:text-xl"
+                    : "font-display text-2xl font-bold tracking-tight text-text-primary"
+                }
+              >
                 {metric.value}
               </p>
-              <p className="type-body-sm">{metric.detail}</p>
+              <p
+                className={
+                  compact
+                    ? "type-body-sm hidden leading-snug sm:block"
+                    : "type-body-sm leading-snug"
+                }
+              >
+                {metric.detail}
+              </p>
             </div>
           </FadeIn>
         ))}
       </div>
-    </section>
+    </Wrapper>
   );
 }

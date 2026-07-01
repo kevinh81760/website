@@ -5,14 +5,9 @@ import { FadeIn } from "@/components/shared/FadeIn";
 
 const faqs = [
   {
-    question: "What exactly does BurgerBots do?",
-    answer:
-      "BurgerBots takes on the repetitive assembly work: toasting buns, portioning sauces, stacking ingredients, plating orders. Your team isn't stuck doing the same motion hundreds of times a shift. It handles the grind. Your people handle the guests.",
-  },
-  {
     question: "Do I need to redesign my kitchen to install it?",
     answer:
-      "No. BurgerBots is designed to work in the kitchen you already have. No construction, no conveyor overhauls, no floor plan changes. It shows up, fits in, and is running the same day, usually within a few hours.",
+      "No. BurgerBots is designed to work in the kitchen you already have, and the layout can be configured to fit your space. No construction, no conveyor overhauls, no floor plan changes. It's running within about a week.",
   },
   {
     question: "How does BurgerBots learn new menu items?",
@@ -22,29 +17,40 @@ const faqs = [
   {
     question: "How fast can it actually work?",
     answer:
-      "One unit handles up to 300 covers per hour without breaking a sweat. If your volume grows, add another unit. They share the queue automatically and pick up the extra load. Your staff stays consistent even when the rush isn't.",
+      "About 27 seconds a burger, and one unit can handle up to 130 covers per hour. If your volume grows, add another unit, they share the queue automatically.",
   },
   {
-    question: "What happens if the robot makes a mistake?",
-    answer:
-      "It catches its own mistakes before your team or your guests ever see them. The onboard vision system watches every step. If something looks off, it flags the order and lets your team know right away. Nothing leaves the pass that shouldn't.",
+    question:
+      "I want in on this bun in a million experience. Can I buy or license my own BurgerBot from you?",
+    answer: (
+      <>
+        You bet. Get in touch with us at{" "}
+        <a
+          href="mailto:realhuman@burgerbots.com"
+          className="font-medium text-text-primary underline underline-offset-2"
+        >
+          realhuman@burgerbots.com
+        </a>{" "}
+        so we can talk burgs &apos;n bots.
+      </>
+    ),
   },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="border-t border-border-subtle">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left group"
+        className="group flex w-full items-center justify-between py-5 text-left"
       >
-        <span className="text-text-primary text-sm font-medium pr-8">
+        <span className="pr-8 text-sm font-medium text-text-primary">
           {question}
         </span>
         <span
-          className={`shrink-0 w-6 h-6 flex items-center justify-center text-text-primary text-xl font-light transition-transform duration-300 ${
+          className={`flex h-6 w-6 shrink-0 items-center justify-center text-xl font-light text-text-primary transition-transform duration-300 ${
             open ? "rotate-45" : ""
           }`}
         >
@@ -53,10 +59,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-48 pb-5" : "max-h-0"
+          open ? "max-h-64 pb-5" : "max-h-0"
         }`}
       >
-        <p className="type-body-sm">{answer}</p>
+        <div className="type-body-sm">{answer}</div>
       </div>
     </div>
   );
@@ -64,8 +70,8 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export function FAQSection() {
   return (
-    <section className="section-shell bg-background mb-11">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.7fr] gap-x-6 gap-y-12">
+    <section className="section-shell mb-11 bg-background">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-[1fr_1.7fr]">
         <FadeIn>
           <h2 className="type-heading-xl text-text-primary">
             Your questions answered

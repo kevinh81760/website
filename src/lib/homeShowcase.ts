@@ -7,6 +7,8 @@ export type ShowcaseTile = {
   size: "sm" | "md" | "lg" | "wide";
   label?: string;
   cta?: { label: string; href: string };
+  /** Tailwind classes to adjust image framing within the tile */
+  imageClassName?: string;
 };
 
 export const homeShowcaseTiles: ShowcaseTile[] = [
@@ -21,30 +23,32 @@ export const homeShowcaseTiles: ShowcaseTile[] = [
   {
     id: "grind",
     type: "image",
-    src: "/assets/flexpicker-burger-assembly.png",
-    alt: "BurgerBot technology in the kitchen",
+    src: "/assets/showcase/burgerbot-action.jpg",
+    alt: "B.O.B. assembling burgers on the line",
     size: "md",
+    imageClassName: "scale-[1.22] -translate-y-[10%]",
   },
   {
     id: "arm",
     type: "image",
-    src: "/assets/launch-day-kids-robot.png",
-    alt: "Kids watching the BurgerBot in action",
+    src: "/assets/showcase/burgerbots-kiosk.jpg",
+    alt: "BurgerBots order kiosk",
     size: "sm",
   },
   {
     id: "burger",
     type: "image",
-    src: "/assets/menu/gochujang-aioli-sauces.png",
-    alt: "Gochujang aioli and house sauces on the line",
+    src: "/assets/showcase/fried-chicken-on-belt.jpg",
+    alt: "Fried chicken moving along the production belt",
     size: "sm",
   },
   {
     id: "kitchen",
     type: "image",
-    src: "/burgerbotthumbnail.jpg",
-    alt: "Kitchen in action",
+    src: "/assets/showcase/restaurant-view.jpg",
+    alt: "Restaurant view with burger at Breaking Dawn",
     size: "wide",
+    imageClassName: "scale-[1.22] -translate-y-[10%]",
   },
   {
     id: "visit",

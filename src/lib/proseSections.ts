@@ -52,12 +52,21 @@ export const investorThesisSections: ProseSection[] = [
       "The system installs in hours into kitchens operators already run. Assembly arm, dispensary, conveyor, and operator interface form a modular stack designed for side-by-side operation with existing staff — not full-line replacement.",
     ],
   },
-  {
-    heading: "Differentiation",
-    body: [
-      "On-device intelligence: recipe learning, vision-based quality checks, and throughput optimization run locally. No cloud round-trips during production. Data stays in the kitchen.",
-      "Modular architecture: each dispensary module hot-swaps in under 90 seconds. Multi-unit deployments share order queues automatically — add capacity by adding units, not by re-architecting the line.",
-      "Team background: founders from aerospace, autonomous vehicles, and AI research — fields where systems must work every time without exception. Live deployments with restaurants and QSR brands today.",
-    ],
-  },
 ];
+
+export const investorDifferentiationSection: ProseSection = {
+  heading: "Differentiation",
+  body: [
+    "Modular architecture: each dispensary module hot-swaps in under 90 seconds. Multi-unit deployments share order queues automatically — add capacity by adding units, not by re-architecting the line.",
+    "We are a team that features a restaurant operator with 25+ years of experience, a robotics engineer with 10 years of experience, and a team of operators.",
+  ],
+};
+
+export const investorFounderSection: ProseSection = {
+  heading: "Founder",
+  body: [
+    "Elizabeth Truong started in restaurant kitchens at fifteen. Twenty five years later, she runs a multi-brand hospitality group and built BurgerBots inside it.",
+    "She has personally worked every station the system now automates: prepping vegetables, dispensing sauces, building orders under pressure during a rush. BurgerBots wasn't designed from a whiteboard. It was designed by someone who already knew where the time, waste, and inconsistency were coming from.",
+    "She leads alongside a robotics engineer with 10 years of platform experience, and a team of working restaurant operators.",
+  ],
+};
