@@ -71,8 +71,8 @@ export function NavBar() {
                     : "/logo.png"
                 }
                 alt="BurgerBots Logo"
-                width={1024}
-                height={682}
+                width={440}
+                height={472}
                 style={{ height: "52px", width: "auto" }}
               />
             </Link>

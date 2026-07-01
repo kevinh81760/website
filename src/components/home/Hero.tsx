@@ -35,15 +35,15 @@ export function Hero() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 right-[var(--spacing-page-x)] z-0 flex translate-x-10 -translate-y-[calc(50%+0.35in)] items-center justify-end max-md:top-auto max-md:right-[var(--spacing-page-x)] max-md:bottom-[calc(7.5rem+0.25in)] max-md:translate-x-6 max-md:translate-y-0"
+        className="pointer-events-none absolute top-1/2 right-[var(--spacing-page-x)] z-0 flex -translate-x-8 -translate-y-[calc(50%+0.35in)] items-center justify-end max-md:top-auto max-md:right-[var(--spacing-page-x)] max-md:bottom-[calc(7.5rem+0.25in)] max-md:-translate-x-4 max-md:translate-y-0"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/burgerbots-logo-hero.png"
           alt=""
-          width={1024}
-          height={682}
-          className="h-[min(42vh,380px)] w-auto max-w-none select-none object-contain max-md:h-[min(28vh,200px)]"
+          width={440}
+          height={472}
+          className="h-[min(50vh,460px)] w-auto max-w-none select-none object-contain max-md:h-[min(32vh,240px)]"
         />
       </div>
 
