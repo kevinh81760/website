@@ -65,13 +65,15 @@ export function NavBar() {
             <Link href="/home" className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo.png"
+                src={
+                  useDarkNav
+                    ? "/assets/burgerbots-logo-nav.png"
+                    : "/logo.png"
+                }
                 alt="BurgerBots Logo"
-                style={{
-                  height: "52px",
-                  width: "auto",
-                  filter: useDarkNav ? "invert(1)" : "none",
-                }}
+                width={1024}
+                height={682}
+                style={{ height: "52px", width: "auto" }}
               />
             </Link>
           )}

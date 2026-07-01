@@ -83,7 +83,7 @@ export function Footer({ variant = "full" }: FooterProps) {
         <div className="border-t border-dashed border-border-dark" />
         <div className="page-x flex flex-col items-center gap-6 py-10 md:flex-row md:justify-between">
           <p className="type-eyebrow text-center text-text-on-dark-muted md:text-left">
-            <span className="block">Breaking Dawn</span>
+            <span className="block">Breaking Dawn & First Born</span>
             <span className="block">160 W Main St, 95030</span>
           </p>
           <div className="flex items-center justify-center gap-8">

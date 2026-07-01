@@ -1,9 +1,5 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/lib/siteConfig";
-
-const { restaurant } = siteConfig;
 
 export function Hero() {
   return (
@@ -18,8 +14,9 @@ export function Hero() {
           </h1>
 
           <p className="type-body-lg">
-            B.O.B. grinds, grills, and garnishes every burger from scratch. Our
-            humans bring it to your table.
+            Our chefs prepare every burger in house using quality beef. B.O.B.
+            handles the garnish, sliced veggies, sauces, the build, to the same
+            spec every time. Our humans bring it to your table.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -34,30 +31,25 @@ export function Hero() {
             </Link>
           </div>
         </div>
+      </div>
 
-        <div
-          aria-hidden
-          className="relative flex h-[min(38vh,280px)] shrink-0 -translate-x-8 -translate-y-4 items-center justify-center max-md:h-[min(28vh,200px)] max-md:-translate-x-4 max-md:-translate-y-3"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo.png"
-            alt=""
-            className="pointer-events-none h-full w-auto select-none invert scale-[1.65] max-md:scale-[1.42]"
-          />
-        </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 right-[var(--spacing-page-x)] z-0 flex translate-x-10 -translate-y-[calc(50%+0.35in)] items-center justify-end max-md:top-auto max-md:right-[var(--spacing-page-x)] max-md:bottom-[calc(7.5rem+0.25in)] max-md:translate-x-6 max-md:translate-y-0"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/burgerbots-logo-hero.png"
+          alt=""
+          width={1024}
+          height={682}
+          className="h-[min(42vh,380px)] w-auto max-w-none select-none object-contain max-md:h-[min(28vh,200px)]"
+        />
       </div>
 
       <p className="type-eyebrow absolute right-[var(--spacing-page-x)] bottom-[calc(2.5rem+0.25in)] text-right text-[0.875rem]">
-        <span className="flex items-center justify-end gap-2 cursor-default underline-offset-[0.2em] transition-[text-decoration] hover:underline">
-          Breaking Dawn
-          <Image
-            src={restaurant.logo}
-            alt=""
-            width={20}
-            height={24}
-            className="h-5 w-auto shrink-0"
-          />
+        <span className="block cursor-default underline-offset-[0.2em] transition-[text-decoration] hover:underline">
+          Breaking Dawn & First Born
         </span>
         <span className="block cursor-default underline-offset-[0.2em] transition-[text-decoration] hover:underline">
           160 W Main St, 95030
